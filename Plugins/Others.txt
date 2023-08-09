@@ -1,0 +1,25 @@
+akisment APi >> 0976b0e55066
+
+Secure Wordpress Data From Hackers >> https://docs.google.com/document/d/1lvE5trrb6S8UaAB8phbcozVG9q_jleFbRmZSAhIF3iU/edit
+
+Step 1. Wp-config.php
+$table_prefix  = 'wp_hj87ka_';
+
+Step 2. Rename default database tables, and keys in wp_options 
+RENAME TABLE wpdb_comments TO wp_hj87ka_comments; 
+RENAME TABLE wpdb_commentmeta TO wp_hj87ka_commentmeta; 
+RENAME TABLE wpdb_links TO wp_hj87ka_links; 
+RENAME TABLE wpdb_options TO wp_hj87ka_options; 
+RENAME TABLE wpdb_postmeta TO wp_hj87ka_postmeta; 
+RENAME TABLE wpdb_posts TO wp_hj87ka_posts; 
+RENAME TABLE wpdb_terms TO wp_hj87ka_terms; 
+RENAME TABLE wpdb_termmeta TO wp_hj87ka_termmeta; 
+RENAME TABLE wpdb_term_relationships TO wp_hj87ka_term_relationships; 
+RENAME TABLE wpdb_term_taxonomy TO wp_hj87ka_term_taxonomy; 
+RENAME TABLE wpdb_usermeta TO wp_hj87ka_usermeta; 
+RENAME TABLE wpdb_users TO wp_hj87ka_users;
+
+Step 3. Rename default wp_field data
+UPDATE wp_hj87ka_options SET option_name = REPLACE(option_name, 'wp_', 'wp_hj87ka_') WHERE option_name LIKE 'wp_%'; 
+UPDATE wp_hj87ka_usermeta SET meta_key = REPLACE(meta_key, 'wp_', 'wp_hj87ka_') WHERE meta_key LIKE 'wp_%';
+
